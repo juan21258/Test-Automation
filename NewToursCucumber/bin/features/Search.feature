@@ -26,7 +26,7 @@ Yo como usuario deseo realizar una busqueda en google esperando un resultado
   ##  When abro la página de Google
   ##  Then busco "el tiempo de mañana" en Google
     
-  @tag2
+  @tagfinal
   Scenario: Login en la App
   When abro la aplicacion en el Navegador Firefox
   

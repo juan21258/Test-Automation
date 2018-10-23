@@ -62,6 +62,40 @@ formatter.match({
 formatter.result({
   "status": "passed"
 });
+formatter.uri("src/test/resources/features/Search.feature");
+formatter.feature({
+  "name": "Busqueda",
+  "description": "Yo como usuario deseo realizar una busqueda en google esperando un resultado",
+  "keyword": "Feature",
+  "tags": [
+    {
+      "name": "@tag"
+    }
+  ]
+});
+formatter.scenario({
+  "name": "Login en la App",
+  "description": "",
+  "keyword": "Scenario",
+  "tags": [
+    {
+      "name": "@tag"
+    },
+    {
+      "name": "@tagfinal"
+    }
+  ]
+});
+formatter.step({
+  "name": "abro la aplicacion en el Navegador Firefox",
+  "keyword": "When "
+});
+formatter.match({
+  "location": "StepDefs_Google.abro_la_aplicacion_en_el_Navegador_Chrome(String)"
+});
+formatter.result({
+  "status": "passed"
+});
 formatter.uri("src/test/resources/features/loginparameters.feature");
 formatter.feature({
   "name": "Accessing NewTours",

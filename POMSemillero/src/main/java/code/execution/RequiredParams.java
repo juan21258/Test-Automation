@@ -68,6 +68,7 @@ public class RequiredParams {
 			sendKeys(data.get(a*12 + 1));
 			driver.findElement(By.name("confirmPassword")).
 			sendKeys(data.get(a*12 + 1));
+			Screenshot(driver, Integer.toString(a) + ".png");
 			driver.findElement(By.name("register")).click();
 		}
 		for (int i = 0; i < data.size();i = i+12) {
