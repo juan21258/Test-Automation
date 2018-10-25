@@ -5,7 +5,6 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.openqa.selenium.WebDriver;
-
 import com.sophos.certification.newtours.userinterfaces.NewToursHomePage;
 import com.sophos.certification.newtours.questions.LoginResult;
 import com.sophos.certification.newtours.tasks.Access;
@@ -13,7 +12,7 @@ import com.sophos.certification.newtours.tasks.OpenTheBrowser;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import net.thucydides.core.annotations.Managed;
-import static net.serenitybdd.screenplay.GivenWhenThen.*;
+import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static org.hamcrest.CoreMatchers.hasItem;
 
 

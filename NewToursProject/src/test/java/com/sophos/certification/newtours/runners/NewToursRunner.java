@@ -8,7 +8,7 @@ import net.serenitybdd.cucumber.CucumberWithSerenity;
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
 		features = "src/test/resources/features/new_tours.feature",
-		tags = {"@login"},
+		tags = {"@registration"},
 		glue = "com.sophos.certification.newtours.stepdefinitions",
 		snippets = SnippetType.CAMELCASE)
 public class NewToursRunner {
