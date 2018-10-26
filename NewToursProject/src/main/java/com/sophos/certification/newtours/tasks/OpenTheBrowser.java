@@ -9,7 +9,9 @@ import static org.hamcrest.CoreMatchers.hasItem;
 import com.sophos.certification.newtours.exceptions.StartException;
 import com.sophos.certification.newtours.questions.OpenResult;
 import static net.serenitybdd.screenplay.GivenWhenThen.*;
-
+/*
+ * Here we open the browser in the new tours home page
+ * */
 public class OpenTheBrowser implements Task{
 	
 	private PageObject page;

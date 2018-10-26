@@ -1,6 +1,6 @@
 #Author: Juan David Perez
 @tag
-Feature: Registration,log-in and fly check-in on new tours web page
+Feature: Registration and log-in on the new tours web page
 
   @registration
   Scenario Outline: User registration

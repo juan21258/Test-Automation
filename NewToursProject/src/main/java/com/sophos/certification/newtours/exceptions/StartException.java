@@ -1,5 +1,8 @@
 package com.sophos.certification.newtours.exceptions;
-
+/*
+ * This handles the exception in case that the open browser task doesn't
+ * work as expected
+ * */
 public class StartException extends AssertionError{
 
 	//Default version error

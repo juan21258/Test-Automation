@@ -5,7 +5,10 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
-
+/*
+ * Here we click the register link in the home page, so we can
+ * access the registration page
+ * */
 public class OpenRegisterPage implements Task{
 
 	@Override

@@ -6,9 +6,9 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Open;
 import net.thucydides.core.annotations.Step;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
-//import static org.hamcrest.CoreMatchers.hasItem;
-//import static net.serenitybdd.screenplay.GivenWhenThen.*;
-
+/*
+ * This class opens the browser according to the page value
+ * */
 public class OpenTheBrowser implements Task {
 	
 	private PageObject page;

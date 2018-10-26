@@ -6,7 +6,10 @@ import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import com.sophos.certification.newtours.userinterfaces.NewToursComponent;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
-
+/*
+ * This class receives the user and password of the actor that will be
+ * logging in the web page
+ * */
 public class Access implements Task {
 	
 	private String user;
@@ -19,7 +22,7 @@ public class Access implements Task {
 	
 	@Override
 	public <T extends Actor> void performAs(T actor) {
-		// Acciones que va a llevar a cabo el usuario
+		// Actions executed by the actor
 		actor.attemptsTo(Enter.theValue(user).
 				into(NewToursComponent.NEWTOURS_USER),
 				Enter.theValue(pass).into(NewToursComponent.NEWTOURS_PASS),
@@ -27,7 +30,6 @@ public class Access implements Task {
 	}
 
 	public static Access in(String user, String pass) {
-		// TODO Auto-generated method stub
 		return instrumented(Access.class,user,pass);
 	}
 }

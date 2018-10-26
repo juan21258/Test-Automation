@@ -6,7 +6,10 @@ import com.sophos.certification.newtours.userinterfaces.NewToursComponent;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.questions.Text;
-
+/*
+ * This is a question that verifies the right behavior of the open browser task
+ * it executes the following method (received value,expected value) 
+ * */
 public class OpenResult implements Question<List<String>>{
 	@Override
 	public List<String> answeredBy(Actor actor) {

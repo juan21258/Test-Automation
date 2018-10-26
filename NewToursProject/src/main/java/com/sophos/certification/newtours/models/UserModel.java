@@ -1,7 +1,9 @@
 package com.sophos.certification.newtours.models;
 
 import java.util.ArrayList;
-
+/*
+ * This class contains every data that will be used in the registration task
+ * */
 public class UserModel {
 	
 	private String userName;

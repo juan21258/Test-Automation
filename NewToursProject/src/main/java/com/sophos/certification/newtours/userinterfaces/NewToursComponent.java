@@ -2,7 +2,9 @@ package com.sophos.certification.newtours.userinterfaces;
 
 import net.serenitybdd.core.annotations.findby.By;
 import net.serenitybdd.screenplay.targets.Target;
-
+/*
+ * Here me map the common objects in the web page
+ * */
 public class NewToursComponent {
 	public static final Target NEWTOURS_USER = 
 			Target.the("New tours login user").located(By.name("userName"));

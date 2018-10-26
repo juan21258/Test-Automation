@@ -9,7 +9,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath("net.serenity-bdd:serenity-gradle-plugin:1.1.1")     
+        classpath("net.serenity-bdd:serenity-gradle-plugin:1.9.9")     
     }
 }
 
@@ -19,8 +19,8 @@ apply plugin: 'idea'
 apply plugin: 'net.serenity-bdd.aggregator'                             
 
 dependencies {
-    testCompile 'net.serenity-bdd:serenity-core:1.9.9'                  
-    testCompile 'net.serenity-bdd:serenity-junit:1.9.9'                
+    testCompile 'net.serenity-bdd:serenity-core:1.1.1'                  
+    testCompile 'net.serenity-bdd:serenity-junit:1.1.1'                
     testCompile('junit:junit:4.12')
     testCompile('org.assertj:assertj-core:1.7.0')
     testCompile('org.slf4j:slf4j-simple:1.7.7')
@@ -32,4 +32,3 @@ dependencies {
     compile 'net.serenity-bdd:serenity-screenplay-webdriver:1.9.9'
 }
 gradle.startParameter.continueOnFailure = true
-test.finalizedBy(aggregate)

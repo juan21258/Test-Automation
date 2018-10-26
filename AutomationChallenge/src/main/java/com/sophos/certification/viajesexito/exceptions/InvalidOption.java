@@ -4,7 +4,8 @@ public class InvalidOption extends AssertionError{
 
 	private static final long serialVersionUID = 1L;
 	public static final String MESSAGE_INVALID_OPTION = "The requested option is not valid";
-	
+	/*This method generates an exeception when the selectec flight option
+	 * is not valid*/
 	public InvalidOption(String message, Throwable cause) {
 		super(message,cause);
 	}

@@ -5,7 +5,10 @@ import com.sophos.certification.newtours.userinterfaces.NewToursComponent;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.questions.Text;
-
+/*
+ * This is a question that verifies the right behavior of the register task
+ * it executes the following method (received value,expected value) 
+ * */
 public class RegisterResult implements Question<List<String>>{
 
 	@Override

@@ -2,7 +2,9 @@ package com.sophos.certification.newtours.userinterfaces;
 
 import net.serenitybdd.core.annotations.findby.By;
 import net.serenitybdd.screenplay.targets.Target;
-
+/*
+ * Mapped objects of the registration page
+ * */
 public class NewToursRegisterPage {
 	public static final Target ITINERARY = 
 			Target.the("Itinerary").located(By.linkText("ITINERARY"));

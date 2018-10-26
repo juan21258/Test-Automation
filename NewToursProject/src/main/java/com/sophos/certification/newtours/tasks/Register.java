@@ -9,12 +9,14 @@ import net.serenitybdd.screenplay.actions.SelectFromOptions;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import com.sophos.certification.newtours.models.UserModel;
 import com.sophos.certification.newtours.userinterfaces.NewToursRegisterPage;
-
+/*
+ * This class registers the user according to the data provided by the 
+ * user model, 
+ * */
 public class Register implements Task {
 	
 	private UserModel userModel;
 
-	//ArrayList<String> data = new ArrayList<String>();
 	public Register(UserModel userModel) {
 		this.userModel = userModel;
 	}
