@@ -3,13 +3,13 @@ package apiAutomation;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 import java.io.IOException;
+import files.Payload;
+import files.Resources;
 import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.path.xml.XmlPath;
 import io.restassured.response.Response;
 import net.thucydides.core.annotations.Step;
-import files.Resources;
-import files.Payload;
 
 public class Basics {
 	
@@ -51,7 +51,7 @@ public class Basics {
 				"}\r\n" + 
 				"";
 		Response res = given().baseUri("http://216.10.245.166").queryParam("key", "qaclick123").
-		body(b).when().post("/maps/api/place/add/json").then().assertThat().statusCode(200).
+		body(b).when().post("/maps/api/place/add/json").then().assertThat().statusCode(202).
 		extract().response();
 		
 		String outres = res.asString();
@@ -110,5 +110,5 @@ public class Basics {
 		XmlPath x = new XmlPath(xmlresponse);
 		String out = x.get("response.place_id");
 		System.out.println(out);
-	}
+	}		
 }

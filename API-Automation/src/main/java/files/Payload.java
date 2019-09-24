@@ -50,4 +50,21 @@ public class Payload {
 				"]";
 		return book;
 	}
+	
+	public static String jiraBody() {
+		String body = "{\r\n" + 
+				"	\"fields\": {\r\n" + 
+				"		\"project\":\r\n" + 
+				"		{\r\n" + 
+				"			\"key\": \"RES\"\r\n" + 
+				"		},\r\n" + 
+				"		\"summary\": \"Debit card defect\",\r\n" + 
+				"		\"description\": \"Creating bug\",\r\n" + 
+				"		\"issuetype\": {\r\n" + 
+				"			\"name\": \"Bug\"\r\n" + 
+				"		}\r\n" + 
+				"	}\r\n" + 
+				"}";
+		return body;
+	}
 }

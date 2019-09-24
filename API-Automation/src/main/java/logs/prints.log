@@ -1,0 +1,4 @@
+10:36:39.975 [main] % }-5level log4j.Alpha - object is not present
+10:36:39.983 [main] % }-5level log4j.Alpha - this is fatal
+10:38:06.721 [main] ERROR log4j.Alpha - object is not present
+10:38:06.728 [main] FATAL log4j.Alpha - this is fatal
