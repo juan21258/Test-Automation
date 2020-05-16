@@ -1,0 +1,25 @@
+{
+  "name": "wdio-app-pom-framework",
+  "version": "1.0.0",
+  "description": "This is pom framework with webdriverIO",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx wdio --spec=argv"
+  },
+  "author": "Juan",
+  "license": "ISC",
+  "devDependencies": {
+    "@wdio/local-runner": "^6.1.11",
+    "@wdio/mocha-framework": "^6.1.8",
+    "@wdio/spec-reporter": "^6.1.9",
+    "@wdio/sync": "^6.1.8",
+    "chai": "^4.2.0",
+    "chai-webdriverio": "^1.0.0",
+    "chromedriver": "^81.0.0",
+    "wdio-chromedriver-service": "^6.0.3",
+    "webdriverio": "^6.1.11"
+  },
+  "dependencies": {
+    "@wdio/cli": "^6.1.11"
+  }
+}

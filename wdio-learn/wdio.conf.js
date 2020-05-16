@@ -1,3 +1,11 @@
+const url = require('./utils/urls');
+const ENV = process.env.ENV;
+
+if(ENV && !['qa','dev','stage','prod'].includes(ENV)){
+    console.log('Please pass the correct ENV value: ENV=qa|dev|stage|prod');
+    process.exit();
+}
+
 exports.config = {
     //
     // ====================
@@ -19,6 +27,13 @@ exports.config = {
     specs: [
         './test/specs/**/*.js'
     ],
+
+    suites:{
+        specsSuite: [
+            './test/specs/*.js'
+        ]
+    },
+
     // Patterns to exclude.
     exclude: [
         // 'path/to/excluded/files'
@@ -89,7 +104,7 @@ exports.config = {
     // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
     // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
     // gets prepended directly.
-    baseUrl: 'http://localhost',
+    baseUrl: url[process.env.ENV],
     //
     // Default timeout for all waitFor* commands.
     waitforTimeout: 10000,
@@ -125,6 +140,7 @@ exports.config = {
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter.html
     reporters: ['spec'],
+ 
     //
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/
