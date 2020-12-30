@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npx wdio --spec=argv",
-    "test-suite": "npx wdio --suite specsSuite"
+    "test-case": "npx wdio --spec",
+    "test-suite": "npx wdio --suite"
   },
   "keywords": [],
   "author": "",
@@ -16,7 +16,7 @@
     "@wdio/mocha-framework": "^6.1.8",
     "@wdio/spec-reporter": "^6.1.9",
     "@wdio/sync": "^6.1.8",
-    "chromedriver": "^81.0.0",
+    "chromedriver": "^86.0.0",
     "wdio-chromedriver-service": "^6.0.2"
   },
   "dependencies": {

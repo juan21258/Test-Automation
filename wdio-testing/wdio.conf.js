@@ -1,10 +1,4 @@
-const url = require('./utils/urls');
-const ENV = process.env.ENV;
-
-if(ENV && !['qa','dev','stage','prod'].includes(ENV)){
-    console.log('Please pass the correct ENV value: ENV=qa|dev|stage|prod');
-    process.exit();
-}
+const config = require('./lib/config')
 
 exports.config = {
     //
@@ -25,21 +19,8 @@ exports.config = {
     // directory is where your package.json resides, so `wdio` will be called from there.
     //
     specs: [
-        './test/**/*.js'
+        './test/specs/**/*.js'
     ],
-
-    suites: {
-        specsSuite: [
-            './test/specs/*.js'
-        ],
-        webSuite: [
-            './test/web-automation/*.js'
-        ],
-        e2eSuite: [
-            './test/end-to-end/*.js'
-        ]
-    },
-
     // Patterns to exclude.
     exclude: [
         // 'path/to/excluded/files'
@@ -60,7 +41,7 @@ exports.config = {
     // and 30 processes will get spawned. The property handles how many capabilities
     // from the same test should run tests.
     //
-    maxInstances: 10,
+    maxInstances: config.maxInstance,
     //
     // If you have trouble getting all important capabilities together, check out the
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
@@ -73,7 +54,8 @@ exports.config = {
         // 5 instances get started at a time.
         maxInstances: 5,
         //
-        browserName: 'chrome',
+        browserName: config.browser,
+        acceptInsecureCerts: true
         // If outputDir is provided WebdriverIO can capture driver session logs
         // it is possible to configure which logTypes to include/exclude.
         // excludeDriverLogs: ['*'], // pass '*' to exclude all driver session logs
@@ -86,14 +68,14 @@ exports.config = {
     // Define all options that are relevant for the WebdriverIO instance here
     //
     // Level of logging verbosity: trace | debug | info | warn | error | silent
-    logLevel: 'info',
+    logLevel: config.logLevel,
     //
     // Set specific log levels per logger
     // loggers:
     // - webdriver, webdriverio
     // - @wdio/applitools-service, @wdio/browserstack-service, @wdio/devtools-service, @wdio/sauce-service
     // - @wdio/mocha-framework, @wdio/jasmine-framework
-    // - @wdio/local-runner, @wdio/lambda-runner
+    // - @wdio/local-runner
     // - @wdio/sumologic-reporter
     // - @wdio/cli, @wdio/config, @wdio/sync, @wdio/utils
     // Level of logging verbosity: trace | debug | info | warn | error | silent
@@ -104,16 +86,16 @@ exports.config = {
     //
     // If you only want to run your tests until a specific amount of tests have failed use
     // bail (default is 0 - don't bail, run all tests).
-    bail: 0,
+    bail: config.bail,
     //
     // Set a base URL in order to shorten url command calls. If your `url` parameter starts
     // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
     // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
     // gets prepended directly.
-    baseUrl: url[process.env.ENV],
+    baseUrl: config.baseUrl,
     //
     // Default timeout for all waitFor* commands.
-    waitforTimeout: 10000,
+    waitforTimeout: config.timeout,
     //
     // Default timeout in milliseconds for request
     // if browser driver or grid doesn't send response
@@ -139,6 +121,9 @@ exports.config = {
     // The number of times to retry the entire specfile when it fails as a whole
     // specFileRetries: 1,
     //
+    // Delay in seconds between the spec file retry attempts
+    // specFileRetriesDelay: 0,
+    //
     // Whether or not retried specfiles should be retried immediately or deferred to the end of the queue
     // specFileRetriesDeferred: false,
     //
@@ -146,7 +131,9 @@ exports.config = {
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter.html
     reporters: ['spec'],
- 
+
+
+    
     //
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/
@@ -193,19 +180,19 @@ exports.config = {
      * Gets executed before test execution begins. At this point you can access to all global
      * variables like `browser`. It is the perfect place to define custom commands.
      * @param {Array.<Object>} capabilities list of capabilities details
-     * @param {Array.<String>} specs List of spec file paths that are to be run
+     * @param {Array.<String>} specs        List of spec file paths that are to be run
+     * @param {Object}         browser      instance of created browser/device session
      */
     before: function (capabilities, specs) {
-        browser.addCommand('waitAndClick',function(selector){
+        browser.addCommnad('waitAndClick',function(selector){
             try {
                 $(selector).waitForExist()
-                $(selector).waitForDisplayed()
                 $(selector).click()
             } catch (e) {
-                throw new Error(`Could not click the selector: ${selector}`)
+                throw new Error(`Could not click the selector:${selector}`)
             }
         })
-    }
+    },
     /**
      * Runs before a WebdriverIO command gets executed.
      * @param {String} commandName hook command name
